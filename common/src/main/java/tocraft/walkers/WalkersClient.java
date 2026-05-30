@@ -14,7 +14,7 @@ import tocraft.walkers.api.model.EntityArms;
 import tocraft.walkers.api.model.EntityUpdaters;
 import tocraft.walkers.api.platform.ApiLevel;
 import tocraft.walkers.eventhandler.ClientRespawnHandler;
-import tocraft.walkers.impl.tick.KeyPressHandler;
+// import tocraft.walkers.impl.tick.KeyPressHandler;
 import tocraft.walkers.network.ClientNetworking;
 import tocraft.walkers.screen.hud.OverlayEventHandler;
 import tocraft.walkers.screen.hud.VariantMenu;
@@ -25,25 +25,14 @@ public class WalkersClient {
     public static int variantOffset = 0;
     private final VariantMenu variantMenu = new VariantMenu();
 
-    public static final KeyMapping UNLOCK_KEY = new KeyMapping("key.walkers_unlock", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_U, "key.categories.walkers");
-    public static final KeyMapping TRANSFORM_KEY = new KeyMapping("key.walkers", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_G, "key.categories.walkers");
-    public static final KeyMapping ABILITY_KEY = new KeyMapping("key.walkers_ability", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_R, "key.categories.walkers");
-    public static final KeyMapping VARIANTS_MENU_KEY = new KeyMapping("key.walkers_variants", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_V, "key.categories.walkers");
-
-
     public void initialize() {
-        KeyBindingRegistry.register(ABILITY_KEY);
-        KeyBindingRegistry.register(TRANSFORM_KEY);
-        KeyBindingRegistry.register(UNLOCK_KEY);
-        KeyBindingRegistry.register(VARIANTS_MENU_KEY);
-
         // Register client-side event handlers
         EntityUpdaters.init();
         AbilityOverlayRenderer.register();
         EntityArms.init();
 
         // Register event handlers
-        ClientTickEvents.CLIENT_PRE.register(new KeyPressHandler());
+        // ClientTickEvents.CLIENT_PRE.register(new KeyPressHandler());
         RenderEvents.HUD_RENDERING.register((guiGraphics, tickDelta) -> variantMenu.render(guiGraphics));
         ClientNetworking.registerPacketHandlers();
 

@@ -18,7 +18,7 @@ public class WalkersConfig implements Config {
     @Comment("Whether shapes equip the armor (chestplate, leggings, elytra) worn by the underlying player.")
     public boolean shapesEquipArmor = true;
     @Comment("If true, the player can cause hostiles to attack via right-clicking.")
-    public boolean playerCanTriggerHostiles = true;
+    public boolean playerCanTriggerHostiles = false;
     @Comment("Whether hostile mobs ignore players with hostile mob shapes.")
     public boolean hostilesIgnoreHostileShapedPlayer = true;
     @Comment("Whether hostile mobs ignore players, even if the player shapes into a not-hostile mob. Requires 'hostilesIgnoreHostileShapedPlayer' to be 'true'.")
@@ -34,7 +34,7 @@ public class WalkersConfig implements Config {
     @Comment("Whether shape sounds take priority over Player Sounds (e.g. Blaze hurt sound when hit).")
     public boolean useShapeSounds = true;
     @Comment("Whether disguised players should randomly emit the ambient sound of their shape.")
-    public boolean playAmbientSounds = true;
+    public boolean playAmbientSounds = false;
     @Comment("Whether disguised players should hear their own ambient sounds (only if playAmbientSounds is true).")
     public boolean hearSelfAmbient = false;
     @Comment("Whether mobs in the flying entity tag can fly.")
@@ -44,13 +44,13 @@ public class WalkersConfig implements Config {
     @Comment("A list of Advancements required before the player can fly using a shape.")
     public List<String> advancementsRequiredForFlight = new ArrayList<>();
     @Comment("Whether Shapes modify your max health value based on their max health value.")
-    public boolean scalingHealth = true;
+    public boolean scalingHealth = false;
     @Comment("This gets the percentage of your current health and implements it into your new health. Only works with scalingHealth!")
     public boolean percentScalingHealth = true;
     @Comment("The maximum value of scaling health. Useful for not giving players 300 HP when they turn into a wither.")
     public int maxHealth = 40;
     @Comment("Whether the player should have the same default amor values as the mob.")
-    public boolean scalingAmor = true;
+    public boolean scalingAmor = false;
     @Comment("The maximum value of default amor. Useful for not having players who can't take damage.")
     public  int maxAmor = 30;
     @Comment("The maximum value of default amor toughness. Useful for not having players who can't take damage.")

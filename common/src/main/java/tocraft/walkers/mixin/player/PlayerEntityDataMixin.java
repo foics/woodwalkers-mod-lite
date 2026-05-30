@@ -36,8 +36,8 @@ import java.util.Optional;
 @Mixin(Player.class)
 public abstract class PlayerEntityDataMixin extends LivingEntity implements PlayerDataProvider {
 
-    @Unique
-    private static final String ABILITY_COOLDOWN_KEY = "AbilityCooldown";
+    // @Unique
+    // private static final String ABILITY_COOLDOWN_KEY = "AbilityCooldown";
     @Unique
     @Nullable
     private ShapeType<?> walkers$unlocked;
@@ -64,7 +64,7 @@ public abstract class PlayerEntityDataMixin extends LivingEntity implements Play
         this.walkers$unlocked = ShapeType.from(unlockedShape);
 
         // Abilities
-        walkers$abilityCooldown = tag.getInt(ABILITY_COOLDOWN_KEY);
+        // walkers$abilityCooldown = tag.getInt(ABILITY_COOLDOWN_KEY);
 
         // Hostility
         walkers$remainingTime = tag.getInt("RemainingHostilityTime");
@@ -85,7 +85,7 @@ public abstract class PlayerEntityDataMixin extends LivingEntity implements Play
         tag.put("UnlockedShape", id);
 
         // Abilities
-        tag.putInt(ABILITY_COOLDOWN_KEY, walkers$abilityCooldown);
+        // tag.putInt(ABILITY_COOLDOWN_KEY, walkers$abilityCooldown);
 
         // Hostility
         tag.putInt("RemainingHostilityTime", walkers$remainingTime);
